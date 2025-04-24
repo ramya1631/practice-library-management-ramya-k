@@ -61,7 +61,7 @@ console.log(`${this.title} has been checked out`);
     }
 // Method to get details
     getDetails(){
-      console.log(`Title: ${this.title}, ID: ${this.id}, IsAvailable: ${this.isAvailable}`);
+      console.log(`Title: ${this.title}, ID: ${this.itemId}, IsAvailable: ${this.isAvailable}`);
     }
 
 }
@@ -88,7 +88,7 @@ class Dvd extends LibraryItem{
     }
    //method to get dvd details
    getDvdDetails(){
-    console.log(`title: ${this.title}, Music: ${this.music}, director: ${this.director}`);
+    console.log(`title: ${this.title},director: ${this.director},duration:${this.duration}minutes`);
     super.getDetails();
    }
 }
@@ -106,7 +106,7 @@ class Magazine extends LibraryItem{
    }
 }
 const book1 = new Book("The Snowy Day", "58700", true, "Margaret Wise Brown", "Picture Book for Children");
- const dvd1 = new Dvd("The Queen", "DVD100", false, "Queen", "Shane Peters");
+ const dvd1 = new Dvd("The Queen", "DVD100", false,"Shane Peters",148);
  const magazine1 = new Magazine("Better Homes and Garden", "Maga201", true, "Home and Lifestyle", "Meredith");
 
 console.log(book1);
@@ -114,8 +114,10 @@ console.log(book1);
  book1.getBookDetails();
  book1.returnItem();
  console.log(dvd1);
+ dvd1.getDvdDetails();
  dvd1.checkOut();
  dvd1.returnItem();
  console.log(magazine1);
+ magazine1.getMagazineDetails();
  magazine1.checkOut();
  magazine1.returnItem();
